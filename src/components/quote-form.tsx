@@ -82,7 +82,7 @@ export default function QuoteForm() {
 
       <div className="flex flex-col gap-1.5">
         <label htmlFor="qf-service" className="label-mono text-abismo/50">
-          Selecciona un servicio *
+          Selecciona un servicio
         </label>
         <select
           id="qf-service"
@@ -92,7 +92,7 @@ export default function QuoteForm() {
           className="rounded-lg border border-concreto/40 bg-hueso px-4 py-3 text-abismo outline-none transition-colors focus:border-marea appearance-none"
         >
           <option value="" disabled>
-            Selecciona un servicio
+            Servicio
           </option>
           {SERVICE_OPTIONS.map((s) => (
             <option key={s} value={s}>
