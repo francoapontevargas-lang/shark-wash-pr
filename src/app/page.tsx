@@ -205,46 +205,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ---- SERVICES ---- */}
-        <section id="servicios" className="relative bg-hueso py-24 sm:py-32">
-          <div className="mx-auto max-w-7xl px-6">
-            <FadeIn>
-              <div className="mx-auto max-w-2xl text-center">
-                <span className="label-mono text-marea">Nuestros servicios</span>
-                <h2
-                  className="mt-4 font-display text-4xl font-[800] tracking-tight sm:text-5xl"
-                  style={{ fontStretch: "expanded" }}
-                >
-                  Lo que lavamos
-                </h2>
-                <p className="mt-4 text-lg text-abismo/50">
-                  Cada superficie requiere una combinación distinta de presión, químico y técnica.
-                  Nosotros la sabemos.
-                </p>
-              </div>
-            </FadeIn>
-
-            <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {SERVICES.map((service, i) => (
-                <FadeIn key={service.id}>
-                  <div className="service-card group relative overflow-hidden rounded-2xl border border-concreto/20 bg-white p-7">
-                    <span className="label-mono text-concreto">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className="mt-4 font-display text-xl font-[700] tracking-tight">
-                      {service.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-abismo/60">
-                      {service.description}
-                    </p>
-                    <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-marea to-espuma transition-all duration-300 group-hover:w-full" />
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ---- FAQ ---- */}
         <section id="faq" className="bg-white py-24 sm:py-32">
           <div className="mx-auto max-w-3xl px-6">
