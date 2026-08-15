@@ -95,11 +95,11 @@ export default function Home() {
           </div>
 
           {/* Mobile: shark visible area */}
-          <div className="relative z-10 flex h-[45dvh] items-end justify-center pb-6 lg:hidden">
+          <div className="relative z-10 flex h-[45dvh] items-end justify-center lg:hidden">
             <img
               src="/shark.png"
               alt="Shark Wash PR"
-              className="h-72 w-auto object-contain opacity-30"
+              className="h-96 w-auto object-contain opacity-30"
               draggable={false}
             />
           </div>
