@@ -21,6 +21,13 @@ const SERVICE_OPTIONS = [
 export default function QuoteForm() {
   const [name, setName] = useState("");
   const [phone, setPhoneVal] = useState("");
+
+  function formatPhone(value: string) {
+    const digits = value.replace(/\D/g, "").slice(0, 10);
+    if (digits.length <= 3) return digits;
+    if (digits.length <= 6) return `${digits.slice(0, 3)}-${digits.slice(3)}`;
+    return `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6)}`;
+  }
   const [service, setService] = useState("");
   const [details, setDetails] = useState("");
 
@@ -74,7 +81,7 @@ export default function QuoteForm() {
             type="tel"
             required
             value={phone}
-            onChange={(e) => setPhoneVal(e.target.value)}
+            onChange={(e) => setPhoneVal(formatPhone(e.target.value))}
             className="rounded-lg border border-concreto/40 bg-hueso px-4 py-3 text-abismo outline-none transition-colors focus:border-marea"
           />
         </div>
