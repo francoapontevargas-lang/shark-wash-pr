@@ -92,7 +92,7 @@ export default function Home() {
             <img
               src="/shark.png"
               alt=""
-              className="absolute left-1/2 top-[75%] h-[130%] w-auto -translate-x-1/2 -translate-y-1/2 object-contain opacity-10"
+              className="absolute left-1/2 top-[70%] h-[130%] w-auto -translate-x-1/2 -translate-y-1/2 object-contain opacity-10"
               aria-hidden="true"
             />
           </div>
