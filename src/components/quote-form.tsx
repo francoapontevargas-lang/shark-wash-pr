@@ -92,7 +92,7 @@ export default function QuoteForm() {
           className="rounded-lg border border-concreto/40 bg-hueso px-4 py-3 text-abismo outline-none transition-colors focus:border-marea appearance-none"
         >
           <option value="" disabled>
-            Ej: aceras, marquesina, fachada...
+            Selecciona un servicio
           </option>
           {SERVICE_OPTIONS.map((s) => (
             <option key={s} value={s}>
