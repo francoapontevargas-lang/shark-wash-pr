@@ -100,14 +100,14 @@ export default function QuoteForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-4 rounded-2xl bg-white p-5 shadow-2xl sm:gap-5 sm:p-8"
+      className="flex flex-col gap-2.5 rounded-2xl bg-white p-4 shadow-2xl sm:gap-5 sm:p-8"
     >
-      <h2 className="font-display text-xl font-[800] text-abismo tracking-tight sm:text-2xl">
+      <h2 className="font-display text-base font-[800] text-abismo tracking-tight sm:text-2xl">
         Solicita una cotización gratis
       </h2>
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div className="flex flex-col gap-1.5">
+      <div className="grid gap-2.5 sm:gap-4 sm:grid-cols-2">
+        <div className="flex flex-col gap-1">
           <label htmlFor="qf-name" className="label-mono text-abismo/50">
             Nombre *
           </label>
@@ -117,7 +117,7 @@ export default function QuoteForm() {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="rounded-lg border border-concreto/40 bg-hueso px-4 py-3 text-abismo outline-none transition-colors focus:border-marea"
+            className="rounded-lg border border-concreto/40 bg-hueso px-3 py-2 text-sm text-abismo outline-none transition-colors focus:border-marea sm:px-4 sm:py-3 sm:text-base"
           />
         </div>
         <div className="flex flex-col gap-1.5">
@@ -135,7 +135,7 @@ export default function QuoteForm() {
               setPhoneError("");
             }}
             onBlur={() => phone && validatePhone(phone)}
-            className={`rounded-lg border bg-hueso px-4 py-3 text-abismo outline-none transition-colors focus:border-marea ${
+            className={`rounded-lg border bg-hueso px-3 py-2 text-sm text-abismo outline-none transition-colors focus:border-marea sm:px-4 sm:py-3 sm:text-base ${
               phoneError ? "border-red-400" : "border-concreto/40"
             }`}
           />
@@ -155,7 +155,7 @@ export default function QuoteForm() {
           value={email}
           placeholder="tu@email.com"
           onChange={(e) => setEmail(e.target.value)}
-          className="rounded-lg border border-concreto/40 bg-hueso px-4 py-3 text-abismo outline-none transition-colors focus:border-marea"
+          className="rounded-lg border border-concreto/40 bg-hueso px-3 py-2 text-sm text-abismo outline-none transition-colors focus:border-marea sm:px-4 sm:py-3 sm:text-base"
         />
       </div>
 
@@ -168,7 +168,7 @@ export default function QuoteForm() {
           required
           value={service}
           onChange={(e) => setService(e.target.value)}
-          className="rounded-lg border border-concreto/40 bg-hueso px-4 py-3 text-abismo outline-none transition-colors focus:border-marea appearance-none"
+          className="rounded-lg border border-concreto/40 bg-hueso px-3 py-2 text-sm text-abismo outline-none transition-colors focus:border-marea sm:px-4 sm:py-3 sm:text-base appearance-none"
         >
           <option value="" disabled>
             Servicio
@@ -187,18 +187,18 @@ export default function QuoteForm() {
         </label>
         <textarea
           id="qf-details"
-          rows={3}
+          rows={2}
           value={details}
           onChange={(e) => setDetails(e.target.value)}
           placeholder="Describe el área, tamaño aproximado, etc."
-          className="rounded-lg border border-concreto/40 bg-hueso px-4 py-3 text-abismo outline-none transition-colors focus:border-marea resize-none"
+          className="rounded-lg border border-concreto/40 bg-hueso px-3 py-2 text-sm text-abismo outline-none transition-colors focus:border-marea sm:px-4 sm:py-3 sm:text-base resize-none"
         />
       </div>
 
       <button
         type="submit"
         disabled={sending}
-        className="mt-1 flex items-center justify-center gap-2 rounded-lg bg-marea px-6 py-4 text-lg font-bold text-white transition-all hover:bg-abismo disabled:opacity-50"
+        className="mt-1 flex items-center justify-center gap-2 rounded-lg bg-marea px-5 py-3 text-base font-bold text-white transition-all hover:bg-abismo disabled:opacity-50 sm:px-6 sm:py-4 sm:text-lg"
       >
         {sending ? "Enviando..." : "Enviar cotización"}
         <svg viewBox="0 0 24 24" fill="currentColor" className="size-5" aria-hidden="true">
