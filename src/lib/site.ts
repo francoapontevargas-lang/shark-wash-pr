@@ -10,16 +10,10 @@ export const TAGLINE = "Dirty surfaces become our prey.";
 
 export const SERVICES = [
   {
-    id: "marquesinas",
-    title: "Marquesinas",
+    id: "driveways",
+    title: "Driveways",
     description:
       "Removemos manchas de aceite, goma de mascar y suciedad acumulada en tu marquesina sin dañar el piso.",
-  },
-  {
-    id: "adoquines",
-    title: "Adoquines",
-    description:
-      "Limpieza profunda entre juntas y superficie. Devolvemos el color original del adoquín.",
   },
   {
     id: "aceras",
@@ -28,28 +22,64 @@ export const SERVICES = [
       "Eliminamos moho, verdín y manchas negras de aceras de concreto y cemento.",
   },
   {
+    id: "propiedad-comercial",
+    title: "Propiedad comercial",
+    description:
+      "Limpieza de estacionamientos, gasolineras, fachadas y pisos de concreto. Remoción de aceite, grasa y marcas.",
+  },
+  {
+    id: "canchas",
+    title: "Canchas deportivas",
+    description:
+      "Lavado de canchas de baloncesto, tenis y áreas deportivas. Superficie segura y sin verdín.",
+  },
+  {
+    id: "placas-solares",
+    title: "Placas solares",
+    description:
+      "Limpieza cuidadosa que maximiza la eficiencia de tus paneles sin rayar ni dañar.",
+  },
+  {
+    id: "zafacones",
+    title: "Zafacones",
+    description:
+      "Limpieza y desinfección de zafacones residenciales y comerciales. Eliminamos olores y bacterias.",
+  },
+  {
+    id: "vehiculos",
+    title: "Vehículos",
+    description:
+      "Lavado exterior de carros, guaguas, camiones y equipo pesado. Removemos lodo, grasa y suciedad acumulada.",
+  },
+  {
     id: "fachadas",
     title: "Fachadas",
     description:
       "Lavado seguro de fachadas residenciales y comerciales. Ajustamos presión y químico según el material.",
   },
   {
-    id: "estacionamientos",
-    title: "Estacionamientos y gasolineras",
+    id: "techos",
+    title: "Techos",
     description:
-      "Limpieza industrial de pisos de concreto, remoción de aceite, grasa y marcas de goma.",
+      "Removemos verdín, moho y manchas de techos de concreto y metal sin dañar la superficie.",
   },
   {
-    id: "canchas",
-    title: "Canchas",
+    id: "piscinas",
+    title: "Áreas de piscina",
     description:
-      "Lavado de canchas de baloncesto, tenis y áreas deportivas. Superficie segura y sin verdín.",
+      "Limpieza de pisos y bordes alrededor de la piscina. Removemos verdín y manchas de cloro.",
   },
   {
-    id: "paneles-solares",
-    title: "Paneles solares",
+    id: "muros",
+    title: "Muros y verjas",
     description:
-      "Limpieza cuidadosa que maximiza la eficiencia de tus paneles sin rayar ni dañar.",
+      "Lavado de muros de bloques, verjas de metal y portones. Devolvemos el color original.",
+  },
+  {
+    id: "mas",
+    title: "Y más",
+    description:
+      "Si tienes una superficie que necesita limpieza, pregúntanos. Ajustamos presión y químico a cualquier material.",
   },
 ] as const;
 

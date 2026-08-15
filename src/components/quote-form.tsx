@@ -4,14 +4,17 @@ import { useState } from "react";
 import { PHONE } from "@/lib/site";
 
 const SERVICE_OPTIONS = [
-  "Marquesina",
-  "Adoquines",
-  "Aceras",
+  "Driveway",
+  "Acera",
+  "Propiedad comercial",
+  "Cancha deportiva",
+  "Placas solares",
+  "Zafacón",
+  "Vehículo",
   "Fachada",
-  "Estacionamiento / Gasolinera",
-  "Cancha",
-  "Paneles solares",
-  "Sellado",
+  "Techo",
+  "Área de piscina",
+  "Muro / Verja",
   "Otro",
 ] as const;
 
