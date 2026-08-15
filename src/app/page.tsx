@@ -123,41 +123,33 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-hueso to-transparent" />
         </section>
 
-        {/* ---- SERVICES ---- */}
-        <section id="servicios" className="relative bg-hueso py-24 sm:py-32">
+        {/* ---- GALLERY (Before & After) ---- */}
+        <section id="galeria" className="bg-hueso py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6">
             <FadeIn>
               <div className="mx-auto max-w-2xl text-center">
-                <span className="label-mono text-marea">Nuestros servicios</span>
+                <span className="label-mono text-marea">Galería</span>
                 <h2
                   className="mt-4 font-display text-4xl font-[800] tracking-tight sm:text-5xl"
                   style={{ fontStretch: "expanded" }}
                 >
-                  Lo que lavamos
+                  Antes y después
                 </h2>
                 <p className="mt-4 text-lg text-abismo/50">
-                  Cada superficie requiere una combinación distinta de presión, químico y técnica.
-                  Nosotros la sabemos.
+                  Arrastra el control para ver la diferencia.
                 </p>
               </div>
             </FadeIn>
 
-            <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {SERVICES.map((service, i) => (
-                <FadeIn key={service.id}>
-                  <div className="service-card group relative overflow-hidden rounded-2xl border border-concreto/20 bg-white p-7">
-                    <span className="label-mono text-concreto">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className="mt-4 font-display text-xl font-[700] tracking-tight">
-                      {service.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-abismo/60">
-                      {service.description}
-                    </p>
-                    {/* Accent bar */}
-                    <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-marea to-espuma transition-all duration-300 group-hover:w-full" />
-                  </div>
+            <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {GALLERY_ITEMS.map((item) => (
+                <FadeIn key={item.id}>
+                  <Comparator
+                    before={item.before}
+                    after={item.after}
+                    alt={item.alt}
+                    className="rounded-2xl shadow-lg ring-1 ring-concreto/20"
+                  />
                 </FadeIn>
               ))}
             </div>
@@ -213,33 +205,40 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ---- GALLERY ---- */}
-        <section id="galeria" className="bg-hueso py-24 sm:py-32">
+        {/* ---- SERVICES ---- */}
+        <section id="servicios" className="relative bg-hueso py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-6">
             <FadeIn>
               <div className="mx-auto max-w-2xl text-center">
-                <span className="label-mono text-marea">Galería</span>
+                <span className="label-mono text-marea">Nuestros servicios</span>
                 <h2
                   className="mt-4 font-display text-4xl font-[800] tracking-tight sm:text-5xl"
                   style={{ fontStretch: "expanded" }}
                 >
-                  Antes y después
+                  Lo que lavamos
                 </h2>
                 <p className="mt-4 text-lg text-abismo/50">
-                  Arrastra el control para ver la diferencia.
+                  Cada superficie requiere una combinación distinta de presión, químico y técnica.
+                  Nosotros la sabemos.
                 </p>
               </div>
             </FadeIn>
 
-            <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {GALLERY_ITEMS.map((item) => (
-                <FadeIn key={item.id}>
-                  <Comparator
-                    before={item.before}
-                    after={item.after}
-                    alt={item.alt}
-                    className="rounded-2xl shadow-lg ring-1 ring-concreto/20"
-                  />
+            <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {SERVICES.map((service, i) => (
+                <FadeIn key={service.id}>
+                  <div className="service-card group relative overflow-hidden rounded-2xl border border-concreto/20 bg-white p-7">
+                    <span className="label-mono text-concreto">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="mt-4 font-display text-xl font-[700] tracking-tight">
+                      {service.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-abismo/60">
+                      {service.description}
+                    </p>
+                    <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-marea to-espuma transition-all duration-300 group-hover:w-full" />
+                  </div>
                 </FadeIn>
               ))}
             </div>
