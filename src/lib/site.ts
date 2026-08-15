@@ -145,16 +145,16 @@ export const GALLERY_ITEMS = [
     after: "/gallery/adoquines-despues.jpg",
   },
   {
-    id: "marquesina",
-    alt: "Marquesina antes y después",
-    before: "/gallery/marquesina-antes.jpg",
-    after: "/gallery/marquesina-despues.jpg",
-  },
-  {
     id: "acera",
     alt: "Acera antes y después",
     before: "/gallery/acera-antes.jpg",
     after: "/gallery/acera-despues.jpg",
+  },
+  {
+    id: "marquesina",
+    alt: "Marquesina antes y después",
+    before: "/gallery/marquesina-antes.jpg",
+    after: "/gallery/marquesina-despues.jpg",
   },
 ] as const;
 
