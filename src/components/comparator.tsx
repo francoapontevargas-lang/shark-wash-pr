@@ -7,6 +7,7 @@ interface ComparatorProps {
   after: string;
   alt: string;
   className?: string;
+  afterStyle?: React.CSSProperties;
 }
 
 function FallbackBlock({ path }: { path: string }) {
@@ -22,6 +23,7 @@ export default function Comparator({
   after,
   alt,
   className = "",
+  afterStyle,
 }: ComparatorProps) {
   const [position, setPosition] = useState(50);
   const [beforeError, setBeforeError] = useState(false);
@@ -47,6 +49,7 @@ export default function Comparator({
             src={after}
             alt={`${alt} (después)`}
             className="absolute inset-0 h-full w-full object-cover"
+            style={afterStyle}
             onError={() => setAfterError(true)}
             draggable={false}
           />

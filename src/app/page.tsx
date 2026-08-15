@@ -148,6 +148,11 @@ export default function Home() {
                     after={item.after}
                     alt={item.alt}
                     className="rounded-2xl shadow-lg ring-1 ring-concreto/20"
+                    afterStyle={
+                      item.id === "marquesina"
+                        ? { transform: "scale(0.85)", objectPosition: "70% 40%" }
+                        : undefined
+                    }
                   />
                 </FadeIn>
               ))}
