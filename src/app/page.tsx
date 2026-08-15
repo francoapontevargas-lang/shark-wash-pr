@@ -89,7 +89,7 @@ export default function Home() {
             <img
               src="/shark.png"
               alt=""
-              className="absolute left-1/2 top-[70%] h-[130%] w-auto -translate-x-1/2 -translate-y-1/2 object-contain opacity-10"
+              className="absolute left-1/2 top-[45%] h-[200%] w-auto -translate-x-1/2 -translate-y-1/2 object-contain opacity-20 sm:top-[70%] sm:h-[130%] sm:opacity-10"
               aria-hidden="true"
             />
           </div>
@@ -97,13 +97,8 @@ export default function Home() {
           <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-24 pt-28 sm:px-6 sm:py-32 sm:pt-40">
             <div className="flex flex-col gap-10 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
               <div className="flex flex-col gap-6 text-center lg:text-left">
-                {/* Mobile: show logo image for luxury look */}
-                <div className="flex justify-center lg:hidden">
-                  <img src="/shark.png" alt="Shark Wash PR" className="h-28 w-auto sm:h-36" draggable={false} />
-                </div>
-                {/* Desktop: show text headline */}
                 <h1
-                  className="hidden lg:block font-display text-7xl font-[800] leading-[1.05] tracking-tight text-white"
+                  className="font-display text-4xl font-[800] leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-7xl"
                   style={{ fontStretch: "expanded" }}
                 >
                   Dirty surfaces
