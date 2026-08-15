@@ -99,7 +99,7 @@ export default function Home() {
             <img
               src="/shark.png"
               alt="Shark Wash PR"
-              className="h-40 w-auto object-contain opacity-30"
+              className="h-72 w-auto object-contain opacity-30"
               draggable={false}
             />
           </div>
