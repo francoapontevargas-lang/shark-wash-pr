@@ -83,22 +83,32 @@ export default function Home() {
 
       <main>
         {/* ---- HERO ---- */}
-        <section className="relative min-h-dvh flex items-center overflow-hidden bg-abismo">
+        <section className="relative flex flex-col overflow-hidden bg-abismo lg:min-h-dvh lg:flex-row lg:items-center">
           {/* Background: dark blue with shark watermark */}
           <div className="absolute inset-0 bg-abismo">
             <img
               src="/shark.png"
               alt=""
-              className="absolute left-1/2 top-[45%] h-[200%] w-auto -translate-x-1/2 -translate-y-1/2 object-contain opacity-20 sm:top-[70%] sm:h-[130%] sm:opacity-10"
+              className="absolute left-1/2 top-[30%] h-[60%] w-auto -translate-x-1/2 -translate-y-1/2 object-contain opacity-25 sm:top-[70%] sm:h-[130%] sm:opacity-10"
               aria-hidden="true"
             />
           </div>
 
-          <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-24 pt-28 sm:px-6 sm:py-32 sm:pt-40">
+          {/* Mobile: shark visible area */}
+          <div className="relative z-10 flex h-[45dvh] items-center justify-center lg:hidden">
+            <img
+              src="/shark.png"
+              alt="Shark Wash PR"
+              className="h-40 w-auto object-contain opacity-30"
+              draggable={false}
+            />
+          </div>
+
+          <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-24 sm:px-6 lg:py-32 lg:pt-40">
             <div className="flex flex-col gap-10 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
-              <div className="flex flex-col gap-6 text-center lg:text-left">
+              <div className="hidden lg:flex flex-col gap-6 text-left">
                 <h1
-                  className="hidden lg:block font-display text-7xl font-[800] leading-[1.05] tracking-tight text-white"
+                  className="font-display text-7xl font-[800] leading-[1.05] tracking-tight text-white"
                   style={{ fontStretch: "expanded" }}
                 >
                   Dirty surfaces
