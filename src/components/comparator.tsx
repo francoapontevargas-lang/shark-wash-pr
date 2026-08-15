@@ -104,11 +104,11 @@ export default function Comparator({
       </div>
 
       {/* Labels */}
-      <span className="label-mono absolute left-3 top-3 rounded bg-abismo/70 px-2 py-1 text-white z-10">
-        Antes
+      <span className="absolute left-3 bottom-3 rounded-full bg-abismo px-4 py-1.5 text-sm font-bold tracking-wide text-white shadow-lg z-10">
+        ANTES
       </span>
-      <span className="label-mono absolute right-3 top-3 rounded bg-abismo/70 px-2 py-1 text-white z-10">
-        Después
+      <span className="absolute right-3 bottom-3 rounded-full bg-espuma px-4 py-1.5 text-sm font-bold tracking-wide text-abismo shadow-lg z-10">
+        DESPUÉS
       </span>
 
       {/* Invisible range input for interaction */}

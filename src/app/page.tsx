@@ -1,5 +1,6 @@
 import Comparator from "@/components/comparator";
 import FadeIn from "@/components/fade-in";
+import QuoteForm from "@/components/quote-form";
 import {
   WHATSAPP_URL,
   INSTAGRAM,
@@ -86,7 +87,7 @@ export default function Home() {
       <main>
         {/* ---- HERO ---- */}
         <section className="relative min-h-dvh flex items-center overflow-hidden bg-abismo">
-          {/* Background image */}
+          {/* Background: stock photo with overlay */}
           <div className="absolute inset-0">
             <img
               src="/hero-bg.jpg"
@@ -112,43 +113,14 @@ export default function Home() {
                 </h1>
 
                 <p className="max-w-lg text-lg leading-relaxed text-white/60">
-                  Pressure washing profesional con equipo a gasolina.
-                  Sin necesidad de toma de corriente. Presión y químico
-                  ajustados a cada tipo de superficie.
+                  Pressure washing profesional en el área metro de San Juan.
+                  Equipo a gasolina, sin necesidad de toma de corriente.
                 </p>
 
-                <div className="flex flex-wrap items-center gap-4">
-                  <a
-                    href={WHATSAPP_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 rounded-full bg-espuma px-8 py-4 text-lg font-bold text-abismo transition-all hover:bg-white hover:shadow-xl"
-                  >
-                    <WhatsAppIcon className="size-5" />
-                    Pide tu estimado gratis
-                  </a>
-                  <a
-                    href={INSTAGRAM}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-4 text-sm font-medium text-white transition-all hover:border-white/50 hover:bg-white/10"
-                  >
-                    <InstagramIcon className="size-4" />
-                    @sharkwashpr
-                  </a>
-                </div>
               </div>
 
-              {/* Hero comparator */}
-              <div className="relative">
-                <div className="absolute -inset-4 rounded-2xl bg-espuma/10 blur-2xl" />
-                <Comparator
-                  before={HERO_COMPARATOR.before}
-                  after={HERO_COMPARATOR.after}
-                  alt={HERO_COMPARATOR.alt}
-                  className="rounded-2xl shadow-2xl ring-1 ring-white/10"
-                />
-              </div>
+              {/* Quote form */}
+              <QuoteForm />
             </div>
           </div>
 
