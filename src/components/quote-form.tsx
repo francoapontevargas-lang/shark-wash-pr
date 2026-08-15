@@ -100,9 +100,9 @@ export default function QuoteForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-5 rounded-2xl bg-white p-8 shadow-2xl"
+      className="flex flex-col gap-4 rounded-2xl bg-white p-5 shadow-2xl sm:gap-5 sm:p-8"
     >
-      <h2 className="font-display text-2xl font-[800] text-abismo tracking-tight">
+      <h2 className="font-display text-xl font-[800] text-abismo tracking-tight sm:text-2xl">
         Solicita una cotización gratis
       </h2>
 

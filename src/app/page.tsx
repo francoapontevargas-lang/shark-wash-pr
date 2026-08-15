@@ -54,19 +54,16 @@ export default function Home() {
     <>
       {/* ---- HEADER ---- */}
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-abismo/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 sm:py-3">
           <a href="#" className="flex items-center gap-2">
-            <Logo className="h-12 w-auto" />
+            <Logo className="h-9 w-auto sm:h-12" />
           </a>
           <nav className="hidden items-center gap-8 md:flex">
-            <a href="#servicios" className="text-sm font-medium text-white/70 transition-colors hover:text-white">
-              Servicios
+            <a href="#galeria" className="text-sm font-medium text-white/70 transition-colors hover:text-white">
+              Galería
             </a>
             <a href="#proceso" className="text-sm font-medium text-white/70 transition-colors hover:text-white">
               Proceso
-            </a>
-            <a href="#galeria" className="text-sm font-medium text-white/70 transition-colors hover:text-white">
-              Galería
             </a>
             <a href="#faq" className="text-sm font-medium text-white/70 transition-colors hover:text-white">
               FAQ
@@ -76,9 +73,9 @@ export default function Home() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-espuma px-5 py-2.5 text-sm font-bold text-abismo transition-all hover:bg-white hover:shadow-lg"
+            className="inline-flex items-center gap-2 rounded-full bg-espuma px-4 py-2 text-xs font-bold text-abismo transition-all hover:bg-white hover:shadow-lg sm:px-5 sm:py-2.5 sm:text-sm"
           >
-            <WhatsAppIcon className="size-4" />
+            <WhatsAppIcon className="size-3.5 sm:size-4" />
             Cotización gratis
           </a>
         </div>
@@ -97,11 +94,11 @@ export default function Home() {
             />
           </div>
 
-          <div className="relative z-10 mx-auto max-w-7xl px-6 py-32 pt-40">
-            <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-              <div className="flex flex-col gap-8">
-<h1
-                  className="font-display text-5xl font-[800] leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl"
+          <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-24 pt-28 sm:px-6 sm:py-32 sm:pt-40">
+            <div className="flex flex-col gap-10 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
+              <div className="flex flex-col gap-6 text-center lg:text-left">
+                <h1
+                  className="font-display text-4xl font-[800] leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-7xl"
                   style={{ fontStretch: "expanded" }}
                 >
                   Dirty surfaces
@@ -110,8 +107,6 @@ export default function Home() {
                   <br />
                   <span className="text-espuma">our prey.</span>
                 </h1>
-
-
               </div>
 
               {/* Quote form */}
@@ -120,16 +115,16 @@ export default function Home() {
           </div>
 
           {/* Bottom fade */}
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-hueso to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-hueso to-transparent sm:h-32" />
         </section>
 
         {/* ---- GALLERY (Before & After) ---- */}
-        <section id="galeria" className="bg-hueso py-24 sm:py-32">
-          <div className="mx-auto max-w-7xl px-6">
+        <section id="galeria" className="bg-hueso py-16 sm:py-24 lg:py-32">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6">
             <FadeIn>
               <div className="mx-auto max-w-2xl text-center">
                 <h2
-                  className="mt-4 font-display text-4xl font-[800] tracking-tight sm:text-5xl"
+                  className="mt-4 font-display text-3xl font-[800] tracking-tight sm:text-4xl lg:text-5xl"
                   style={{ fontStretch: "expanded" }}
                 >
                   This is what we do
@@ -140,7 +135,7 @@ export default function Home() {
               </div>
             </FadeIn>
 
-            <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-10 grid gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
               {GALLERY_ITEMS.map((item) => (
                 <FadeIn key={item.id}>
                   <Comparator
@@ -156,8 +151,8 @@ export default function Home() {
         </section>
 
         {/* ---- PROCESS ---- */}
-        <section id="proceso" className="bg-abismo py-24 text-white sm:py-32">
-          <div className="mx-auto max-w-7xl px-6">
+        <section id="proceso" className="bg-abismo py-16 text-white sm:py-24 lg:py-32">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6">
             <FadeIn>
               <div className="mx-auto max-w-2xl text-center">
                 <span className="label-mono text-espuma">Proceso</span>
@@ -205,8 +200,8 @@ export default function Home() {
         </section>
 
         {/* ---- FAQ ---- */}
-        <section id="faq" className="bg-white py-24 sm:py-32">
-          <div className="mx-auto max-w-3xl px-6">
+        <section id="faq" className="bg-white py-16 sm:py-24 lg:py-32">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6">
             <FadeIn>
               <div className="text-center">
                 <span className="label-mono text-marea">Preguntas frecuentes</span>
@@ -240,13 +235,13 @@ export default function Home() {
         </section>
 
         {/* ---- CLOSING CTA ---- */}
-        <section className="relative overflow-hidden bg-abismo py-24 sm:py-32">
+        <section className="relative overflow-hidden bg-abismo py-16 sm:py-24 lg:py-32">
           {/* Background glow */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <div className="h-[500px] w-[500px] rounded-full bg-marea/20 blur-[120px]" />
           </div>
 
-          <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
+          <div className="relative z-10 mx-auto max-w-3xl px-4 text-center sm:px-6">
             <FadeIn>
               <Logo className="mx-auto h-20 w-auto mb-8" />
               <h2
@@ -274,8 +269,8 @@ export default function Home() {
       </main>
 
       {/* ---- FOOTER ---- */}
-      <footer className="bg-abismo border-t border-white/10 py-12 text-white/40">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 px-6 sm:flex-row sm:justify-between">
+      <footer className="bg-abismo border-t border-white/10 py-8 text-white/40 sm:py-12">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-4 sm:flex-row sm:justify-between sm:gap-8 sm:px-6">
           <div className="flex items-center gap-3">
             <Logo className="h-10 w-auto" />
           </div>
