@@ -111,10 +111,6 @@ export default function Home() {
                   <span className="text-espuma">our prey.</span>
                 </h1>
 
-                <p className="max-w-lg text-lg leading-relaxed text-white/60">
-                  Pressure washing profesional en el área metro de San Juan.
-                  Equipo a gasolina, sin necesidad de toma de corriente.
-                </p>
 
               </div>
 
