@@ -41,7 +41,7 @@ function InstagramIcon({ className = "size-5" }: { className?: string }) {
 function Logo({ className = "h-10 w-auto" }: { className?: string }) {
   return (
     <img
-      src="/logo.png"
+      src="/shark.png"
       alt="Shark Wash PR"
       className={className}
       draggable={false}
