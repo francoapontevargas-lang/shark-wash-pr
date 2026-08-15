@@ -86,7 +86,7 @@ export default function Comparator({
         style={{ left: `${position}%` }}
         aria-hidden="true"
       >
-        <div className="flex size-11 items-center justify-center rounded-full bg-espuma shadow-lg">
+        <div className="flex size-11 items-center justify-center rounded-full bg-abismo shadow-lg">
           <img
             src="/shark.png"
             alt=""
