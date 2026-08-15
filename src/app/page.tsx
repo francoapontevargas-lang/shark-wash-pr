@@ -99,7 +99,7 @@ export default function Home() {
               <div className="flex flex-col gap-6 text-center lg:text-left">
                 {/* Mobile: show logo image for luxury look */}
                 <div className="flex justify-center lg:hidden">
-                  <Logo className="h-28 w-auto sm:h-36" />
+                  <img src="/shark.png" alt="Shark Wash PR" className="h-28 w-auto sm:h-36" draggable={false} />
                 </div>
                 {/* Desktop: show text headline */}
                 <h1
