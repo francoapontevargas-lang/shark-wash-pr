@@ -87,15 +87,14 @@ export default function Home() {
       <main>
         {/* ---- HERO ---- */}
         <section className="relative min-h-dvh flex items-center overflow-hidden bg-abismo">
-          {/* Background: stock photo with overlay */}
-          <div className="absolute inset-0">
+          {/* Background: dark blue with shark watermark */}
+          <div className="absolute inset-0 bg-abismo">
             <img
-              src="/hero-bg.jpg"
+              src="/shark.png"
               alt=""
-              className="h-full w-full object-cover"
+              className="absolute left-1/2 top-1/2 h-[85%] w-auto -translate-x-1/2 -translate-y-1/2 object-contain opacity-10"
               aria-hidden="true"
             />
-            <div className="hero-gradient absolute inset-0" />
           </div>
 
           <div className="relative z-10 mx-auto max-w-7xl px-6 py-32 pt-40">
