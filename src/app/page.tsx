@@ -97,8 +97,13 @@ export default function Home() {
           <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-24 pt-28 sm:px-6 sm:py-32 sm:pt-40">
             <div className="flex flex-col gap-10 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
               <div className="flex flex-col gap-6 text-center lg:text-left">
+                {/* Mobile: show logo image for luxury look */}
+                <div className="flex justify-center lg:hidden">
+                  <Logo className="h-28 w-auto sm:h-36" />
+                </div>
+                {/* Desktop: show text headline */}
                 <h1
-                  className="font-display text-4xl font-[800] leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-7xl"
+                  className="hidden lg:block font-display text-7xl font-[800] leading-[1.05] tracking-tight text-white"
                   style={{ fontStretch: "expanded" }}
                 >
                   Dirty surfaces
