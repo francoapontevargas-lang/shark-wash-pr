@@ -128,7 +128,6 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-6">
             <FadeIn>
               <div className="mx-auto max-w-2xl text-center">
-                <span className="label-mono text-marea">Our work</span>
                 <h2
                   className="mt-4 font-display text-4xl font-[800] tracking-tight sm:text-5xl"
                   style={{ fontStretch: "expanded" }}
