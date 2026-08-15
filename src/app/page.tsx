@@ -95,7 +95,7 @@ export default function Home() {
           </div>
 
           {/* Mobile: shark visible area */}
-          <div className="relative z-10 flex h-[45dvh] items-center justify-center lg:hidden">
+          <div className="relative z-10 flex h-[45dvh] items-end justify-center pb-6 lg:hidden">
             <img
               src="/shark.png"
               alt="Shark Wash PR"
