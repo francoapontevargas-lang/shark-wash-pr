@@ -86,24 +86,15 @@ export default function Comparator({
         style={{ left: `${position}%` }}
         aria-hidden="true"
       >
-        <svg
-          width="36"
-          height="36"
-          viewBox="0 0 36 36"
-          fill="none"
-          className="drop-shadow-md"
-        >
-          {/* Circle background */}
-          <circle cx="18" cy="18" r="16" fill="#6EC6E8" />
-          {/* Shark fin */}
-          <path
-            d="M18 8 C18 8, 24 16, 24 20 C24 24, 18 26, 18 26 C18 26, 12 24, 12 20 C12 16, 18 8, 18 8Z"
-            fill="#06263D"
+        <div className="flex size-11 items-center justify-center rounded-full bg-espuma shadow-lg">
+          <img
+            src="/shark.png"
+            alt=""
+            className="size-7 object-contain"
+            draggable={false}
+            aria-hidden="true"
           />
-          {/* Left/right arrows */}
-          <path d="M8 18L12 15V21L8 18Z" fill="#06263D" />
-          <path d="M28 18L24 15V21L28 18Z" fill="#06263D" />
-        </svg>
+        </div>
       </div>
 
       {/* Labels */}
