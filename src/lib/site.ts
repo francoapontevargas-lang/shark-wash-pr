@@ -51,12 +51,6 @@ export const SERVICES = [
     description:
       "Limpieza cuidadosa que maximiza la eficiencia de tus paneles sin rayar ni dañar.",
   },
-  {
-    id: "sellado",
-    title: "Sellado",
-    description:
-      "Aplicamos sellador después del lavado para proteger la superficie y mantenerla limpia por más tiempo.",
-  },
 ] as const;
 
 export const PROCESS_STEPS = [
