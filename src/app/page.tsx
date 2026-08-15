@@ -98,7 +98,7 @@ export default function Home() {
             <div className="flex flex-col gap-10 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
               <div className="flex flex-col gap-6 text-center lg:text-left">
                 <h1
-                  className="font-display text-4xl font-[800] leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-7xl"
+                  className="hidden lg:block font-display text-7xl font-[800] leading-[1.05] tracking-tight text-white"
                   style={{ fontStretch: "expanded" }}
                 >
                   Dirty surfaces
