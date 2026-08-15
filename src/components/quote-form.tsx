@@ -15,7 +15,7 @@ const SERVICE_OPTIONS = [
   "Techo",
   "Área de piscina",
   "Muro / Verja",
-  "Otro",
+  "Otro - También bregamos con eso",
 ] as const;
 
 export default function QuoteForm() {
