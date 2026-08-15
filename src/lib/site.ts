@@ -79,7 +79,7 @@ export const SERVICES = [
     id: "mas",
     title: "Y más",
     description:
-      "Si tienes una superficie que necesita limpieza, pregúntanos. Ajustamos presión y químico a cualquier material.",
+      "¿Tienes otra superficie? También bregamos con eso. Pregúntanos y te damos precio.",
   },
 ] as const;
 
