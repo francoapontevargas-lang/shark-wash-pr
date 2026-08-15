@@ -139,16 +139,16 @@ export const FAQ = [
 
 export const GALLERY_ITEMS = [
   {
-    id: "marquesina",
-    alt: "Marquesina antes y después",
-    before: "/gallery/marquesina-antes.jpg",
-    after: "/gallery/marquesina-despues.jpg",
-  },
-  {
     id: "adoquines",
     alt: "Adoquines antes y después",
     before: "/gallery/adoquines-antes.jpg",
     after: "/gallery/adoquines-despues.jpg",
+  },
+  {
+    id: "marquesina",
+    alt: "Marquesina antes y después",
+    before: "/gallery/marquesina-antes.jpg",
+    after: "/gallery/marquesina-despues.jpg",
   },
   {
     id: "acera",
