@@ -28,8 +28,10 @@ export default function Comparator({
   const [position, setPosition] = useState(50);
   const [beforeError, setBeforeError] = useState(false);
   const [afterError, setAfterError] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const isDragging = useRef(false);
+  const startPos = useRef<{ x: number; y: number } | null>(null);
+  const locked = useRef<"slider" | "scroll" | null>(null);
 
   const updatePosition = useCallback((clientX: number) => {
     const container = containerRef.current;
@@ -42,26 +44,57 @@ export default function Comparator({
 
   const handlePointerDown = useCallback(
     (e: React.PointerEvent) => {
-      e.preventDefault();
-      setIsDragging(true);
-      (e.target as HTMLElement).setPointerCapture(e.pointerId);
-      updatePosition(e.clientX);
+      startPos.current = { x: e.clientX, y: e.clientY };
+      locked.current = null;
+      isDragging.current = false;
     },
-    [updatePosition]
+    []
   );
 
   const handlePointerMove = useCallback(
     (e: React.PointerEvent) => {
-      if (!isDragging) return;
-      e.preventDefault();
-      updatePosition(e.clientX);
+      if (!startPos.current) return;
+
+      // Determine direction on first significant move
+      if (!locked.current) {
+        const dx = Math.abs(e.clientX - startPos.current.x);
+        const dy = Math.abs(e.clientY - startPos.current.y);
+        if (dx < 5 && dy < 5) return; // too small to decide
+
+        if (dx > dy) {
+          // Horizontal — lock to slider
+          locked.current = "slider";
+          isDragging.current = true;
+          (e.target as HTMLElement).setPointerCapture(e.pointerId);
+        } else {
+          // Vertical — let page scroll
+          locked.current = "scroll";
+          startPos.current = null;
+          return;
+        }
+      }
+
+      if (locked.current === "slider") {
+        e.preventDefault();
+        updatePosition(e.clientX);
+      }
     },
-    [isDragging, updatePosition]
+    [updatePosition]
   );
 
   const handlePointerUp = useCallback(() => {
-    setIsDragging(false);
+    // If user tapped without dragging, update position to tap location
+    isDragging.current = false;
+    startPos.current = null;
+    locked.current = null;
   }, []);
+
+  const handleClick = useCallback(
+    (e: React.MouseEvent) => {
+      updatePosition(e.clientX);
+    },
+    [updatePosition]
+  );
 
   return (
     <div
@@ -71,10 +104,11 @@ export default function Comparator({
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
       onPointerCancel={handlePointerUp}
-      style={{ touchAction: "none" }}
+      onClick={handleClick}
+      style={{ touchAction: "pan-y" }}
     >
       {/* Bottom layer: clean / after */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         {afterError ? (
           <FallbackBlock path={after} />
         ) : (
@@ -91,7 +125,7 @@ export default function Comparator({
 
       {/* Top layer: dirty / before, clipped */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 pointer-events-none"
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
       >
         {beforeError ? (
@@ -109,13 +143,13 @@ export default function Comparator({
 
       {/* Divider line */}
       <div
-        className="comparator-divider"
+        className="comparator-divider pointer-events-none"
         style={{ left: `${position}%` }}
       />
 
       {/* Shark fin handle */}
       <div
-        className="comparator-handle"
+        className="comparator-handle pointer-events-none"
         style={{ left: `${position}%` }}
         aria-hidden="true"
       >
