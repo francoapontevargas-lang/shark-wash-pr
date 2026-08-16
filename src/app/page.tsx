@@ -137,10 +137,10 @@ export default function Home() {
                   className="mt-4 font-display text-3xl font-[800] tracking-tight sm:text-4xl lg:text-5xl"
                   style={{ fontStretch: "expanded" }}
                 >
-                  This is what we do
+                  Nuestro trabajo
                 </h2>
                 <p className="mt-4 text-lg text-abismo/50">
-                  Results speak for themselves.
+                  Los resultados hablan por sí solos.
                 </p>
               </div>
             </FadeIn>
