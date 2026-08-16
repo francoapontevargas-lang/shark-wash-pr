@@ -164,11 +164,17 @@ export default function Comparator({
         </div>
       </div>
 
-      {/* Labels */}
-      <span className="absolute left-3 bottom-3 rounded-full bg-abismo px-4 py-1.5 text-sm font-bold tracking-wide text-white shadow-lg z-10 pointer-events-none">
+      {/* Labels — fade out as slider approaches their side */}
+      <span
+        className="absolute left-3 bottom-3 rounded-full bg-abismo px-4 py-1.5 text-sm font-bold tracking-wide text-white shadow-lg z-10 pointer-events-none transition-opacity"
+        style={{ opacity: Math.min(1, position / 20) }}
+      >
         ANTES
       </span>
-      <span className="absolute right-3 bottom-3 rounded-full bg-espuma px-4 py-1.5 text-sm font-bold tracking-wide text-abismo shadow-lg z-10 pointer-events-none">
+      <span
+        className="absolute right-3 bottom-3 rounded-full bg-espuma px-4 py-1.5 text-sm font-bold tracking-wide text-abismo shadow-lg z-10 pointer-events-none transition-opacity"
+        style={{ opacity: Math.min(1, (100 - position) / 20) }}
+      >
         DESPUÉS
       </span>
     </div>
