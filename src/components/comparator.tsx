@@ -107,7 +107,7 @@ export default function Comparator({
       onClick={handleClick}
       style={{ touchAction: "pan-y" }}
     >
-      {/* Bottom layer: clean / after */}
+      {/* Bottom layer: clean / after + DESPUÉS label */}
       <div className="absolute inset-0 pointer-events-none">
         {afterError ? (
           <FallbackBlock path={after} />
@@ -121,9 +121,12 @@ export default function Comparator({
             draggable={false}
           />
         )}
+        <span className="absolute right-3 bottom-3 rounded-full bg-espuma px-4 py-1.5 text-sm font-bold tracking-wide text-abismo shadow-lg z-10">
+          DESPUÉS
+        </span>
       </div>
 
-      {/* Top layer: dirty / before, clipped */}
+      {/* Top layer: dirty / before, clipped + ANTES label */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
@@ -139,6 +142,9 @@ export default function Comparator({
             draggable={false}
           />
         )}
+        <span className="absolute left-3 bottom-3 rounded-full bg-abismo px-4 py-1.5 text-sm font-bold tracking-wide text-white shadow-lg z-10">
+          ANTES
+        </span>
       </div>
 
       {/* Divider line */}
@@ -164,19 +170,6 @@ export default function Comparator({
         </div>
       </div>
 
-      {/* Labels — fade out as slider approaches their side */}
-      <span
-        className="absolute left-3 bottom-3 rounded-full bg-abismo px-4 py-1.5 text-sm font-bold tracking-wide text-white shadow-lg z-10 pointer-events-none transition-opacity"
-        style={{ opacity: Math.min(1, position / 20) }}
-      >
-        ANTES
-      </span>
-      <span
-        className="absolute right-3 bottom-3 rounded-full bg-espuma px-4 py-1.5 text-sm font-bold tracking-wide text-abismo shadow-lg z-10 pointer-events-none transition-opacity"
-        style={{ opacity: Math.min(1, (100 - position) / 20) }}
-      >
-        DESPUÉS
-      </span>
     </div>
   );
 }
