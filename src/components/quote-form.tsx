@@ -129,7 +129,7 @@ export default function QuoteForm() {
             type="tel"
             required
             value={phone}
-            placeholder="787-000-0000"
+            placeholder=""
             onChange={(e) => {
               setPhoneVal(formatPhone(e.target.value));
               setPhoneError("");
