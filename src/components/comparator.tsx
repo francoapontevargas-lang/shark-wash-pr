@@ -107,7 +107,7 @@ export default function Comparator({
       onClick={handleClick}
       style={{ touchAction: "pan-y" }}
     >
-      {/* Bottom layer: clean / after + DESPUÉS label */}
+      {/* Bottom layer: clean / after image (full, unclipped) */}
       <div className="absolute inset-0 pointer-events-none">
         {afterError ? (
           <FallbackBlock path={after} />
@@ -121,6 +121,13 @@ export default function Comparator({
             draggable={false}
           />
         )}
+      </div>
+
+      {/* After label layer: clipped to right side of divider */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ clipPath: `inset(0 0 0 ${position}%)` }}
+      >
         <span className="absolute right-3 bottom-3 rounded-full bg-espuma px-4 py-1.5 text-sm font-bold tracking-wide text-abismo shadow-lg z-10">
           DESPUÉS
         </span>
