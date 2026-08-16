@@ -140,7 +140,7 @@ export default function Home() {
                   Nuestro trabajo
                 </h2>
                 <p className="mt-4 text-lg text-abismo/50">
-                  Los resultados hablan por sí solos.
+                  Desliza para ver los resultados.
                 </p>
               </div>
             </FadeIn>
