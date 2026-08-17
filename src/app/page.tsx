@@ -175,7 +175,7 @@ export default function Home() {
               </div>
             </FadeIn>
 
-            <div className="mt-16 grid gap-12 sm:grid-cols-3 sm:gap-8">
+            <div className="mt-16 grid gap-12 sm:grid-cols-4 sm:gap-8">
               {PROCESS_STEPS.map((step) => (
                 <FadeIn key={step.step}>
                   <div className="step-connector flex flex-col items-center text-center sm:items-start sm:text-left">

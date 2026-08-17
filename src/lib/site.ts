@@ -90,10 +90,14 @@ export const PROCESS_STEPS = [
   },
   {
     step: 2,
-    title: "Precio fijo",
+    title: "Evaluamos",
   },
   {
     step: 3,
+    title: "Precio",
+  },
+  {
+    step: 4,
     title: "Lavamos",
   },
 ] as const;
