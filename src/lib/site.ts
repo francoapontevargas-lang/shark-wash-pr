@@ -87,20 +87,14 @@ export const PROCESS_STEPS = [
   {
     step: 1,
     title: "Envía fotos y/o videos",
-    description:
-      "Nos envías fotos y/o videos del área por WhatsApp. Así evaluamos el tamaño, el tipo de superficie y el nivel de suciedad.",
   },
   {
     step: 2,
     title: "Precio fijo",
-    description:
-      "Te damos un precio fijo por el trabajo completo. Sin sorpresas, sin cargos adicionales.",
   },
   {
     step: 3,
     title: "Lavamos",
-    description:
-      "Llegamos con equipo a gasolina (no necesitamos toma de corriente), ajustamos presión y químico según la superficie, y dejamos todo limpio.",
   },
 ] as const;
 

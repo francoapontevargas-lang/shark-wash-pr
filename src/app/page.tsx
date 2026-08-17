@@ -187,9 +187,6 @@ export default function Home() {
                     <h3 className="mt-6 font-display text-2xl font-[700] tracking-tight">
                       {step.title}
                     </h3>
-                    <p className="mt-3 text-base leading-relaxed text-white/50">
-                      {step.description}
-                    </p>
                   </div>
                 </FadeIn>
               ))}
