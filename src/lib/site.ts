@@ -86,9 +86,9 @@ export const SERVICES = [
 export const PROCESS_STEPS = [
   {
     step: 1,
-    title: "Mandas fotos",
+    title: "Envía fotos y/o videos",
     description:
-      "Nos envías fotos del área por WhatsApp. Así evaluamos el tamaño, el tipo de superficie y el nivel de suciedad.",
+      "Nos envías fotos y/o videos del área por WhatsApp. Así evaluamos el tamaño, el tipo de superficie y el nivel de suciedad.",
   },
   {
     step: 2,
