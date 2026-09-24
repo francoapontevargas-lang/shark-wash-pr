@@ -1,10 +1,12 @@
 export const PHONE = "17875293156";
 
 export const WHATSAPP_URL = `https://wa.me/${PHONE}?text=${encodeURIComponent(
-  "Hola, me interesa un servicio de pressure washing. ¿Me pueden dar un estimado?"
+  "Saludos, me interesan sus servicios."
 )}`;
 
 export const INSTAGRAM = "https://www.instagram.com/sharkwashpr";
+
+export const FACEBOOK = "https://www.facebook.com/share/1LoYYjekxy/?mibextid=wwXIfr";
 
 export const TAGLINE = "Dirty surfaces become our prey.";
 
@@ -83,22 +85,63 @@ export const SERVICES = [
   },
 ] as const;
 
+/** The marquee only shows service names (no descriptions). */
+export const MARQUEE_SERVICES = [
+  "Driveway",
+  "Acera",
+  "Marquesina",
+  "Fachada",
+  "Techo",
+  "Adoquines",
+  "Placas solares",
+  "Cancha deportiva",
+  "Muro / Verja",
+  "Área de piscina",
+] as const;
+
+/** Footer-only service list (slightly different from the main SERVICES). */
+export const FOOTER_SERVICES = [
+  "Driveway",
+  "Marquesina",
+  "Acera",
+  "Fachada",
+  "Techo",
+  "Adoquines",
+  "Placas solares",
+  "Cancha deportiva",
+  "Muro / Verja",
+  "Área de piscina",
+  "Propiedad comercial",
+] as const;
+
 export const PROCESS_STEPS = [
   {
     step: 1,
-    title: "Envía fotos y/o videos",
+    title: "Envíanos fotos y/o videos o agenda una cotización",
+    description:
+      "Cada trabajo se cotiza individualmente según el área, el tipo de superficie y el nivel de suciedad.",
+    meta: "Por WhatsApp",
   },
   {
     step: 2,
     title: "Evaluamos",
+    description:
+      "Evaluamos el área para escoger el mejor método de limpieza.",
+    meta: "Según el material",
   },
   {
     step: 3,
     title: "Precio",
+    description:
+      "Te damos un precio fijo antes de comenzar. Sin sorpresas y sin cargos adicionales.",
+    meta: "Precio fijo",
   },
   {
     step: 4,
     title: "Lavamos",
+    description:
+      "Llegamos con nuestro equipo profesional y dejamos tu propiedad limpia y como nueva.",
+    meta: "1–2 h típico",
   },
 ] as const;
 
@@ -126,7 +169,7 @@ export const FAQ = [
   {
     question: "¿Trabajan fines de semana?",
     answer:
-      "Sí, trabajamos de lunes a sábado. Domingos por disponibilidad.",
+      "Sí, disponibles los 7 días de la semana.",
   },
   {
     question: "¿Qué áreas cubren?",
@@ -139,26 +182,19 @@ export const GALLERY_ITEMS = [
   {
     id: "adoquines",
     alt: "Adoquines antes y después",
-    before: "/gallery/adoquines-antes.jpg",
-    after: "/gallery/adoquines-despues.jpg",
+    before: "/gallery/adoquines-antes.webp",
+    after: "/gallery/adoquines-despues.webp",
   },
   {
     id: "acera",
     alt: "Acera antes y después",
-    before: "/gallery/acera-antes.jpg",
-    after: "/gallery/acera-despues.jpg",
+    before: "/gallery/acera-antes.webp",
+    after: "/gallery/acera-despues.webp",
   },
   {
     id: "marquesina",
     alt: "Marquesina antes y después",
-    before: "/gallery/marquesina-antes.jpg",
-    after: "/gallery/marquesina-despues.jpg",
+    before: "/gallery/marquesina-antes.webp",
+    after: "/gallery/marquesina-despues.webp",
   },
 ] as const;
-
-export const HERO_COMPARATOR = {
-  id: "hero",
-  alt: "Entrada de casa antes y después del pressure washing",
-  before: "/gallery/hero-antes.jpg",
-  after: "/gallery/hero-despues.jpg",
-} as const;

@@ -1,318 +1,408 @@
 import Comparator from "@/components/comparator";
-import FadeIn from "@/components/fade-in";
-import QuoteForm from "@/components/quote-form";
+import Immersion from "@/components/immersion";
 import {
   WHATSAPP_URL,
   INSTAGRAM,
+  FACEBOOK,
   TAGLINE,
-  SERVICES,
+  MARQUEE_SERVICES,
+  FOOTER_SERVICES,
   PROCESS_STEPS,
   FAQ,
   GALLERY_ITEMS,
-  HERO_COMPARATOR,
 } from "@/lib/site";
+
+/* ---- Inline SVG icons ---- */
 
 function WhatsAppIcon({ className = "size-5" }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className={className}
-      aria-hidden="true"
-    >
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15s-.77.96-.94 1.16c-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.79.37s-1.04 1.02-1.04 2.48 1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.8h-.02a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.71.97.99-3.62-.23-.37a9.77 9.77 0 0 1-1.5-5.22c0-5.4 4.4-9.79 9.82-9.79 2.62 0 5.08 1.02 6.94 2.88a9.72 9.72 0 0 1 2.87 6.92c0 5.4-4.4 9.8-9.81 9.8m8.35-18.15A11.75 11.75 0 0 0 12.05 0C5.5 0 .18 5.32.17 11.85c0 2.09.55 4.13 1.6 5.93L.07 24l6.37-1.66a11.9 11.9 0 0 0 5.61 1.42h.01c6.54 0 11.86-5.32 11.87-11.86 0-3.17-1.24-6.15-3.48-8.39" />
     </svg>
   );
 }
 
 function InstagramIcon({ className = "size-5" }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className={className}
-      aria-hidden="true"
-    >
-      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9s.68.82.9 1.38c.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38s-.82.68-1.38.9c-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9s-.68-.82-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38s.82-.68 1.38-.9c.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.12 1.38S.93 3.35.63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.12s1.33 1.08 2.12 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.12-1.38s1.08-1.33 1.38-2.12c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.12S20.65.93 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0m0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32M12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8m7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0" />
     </svg>
   );
 }
 
-function Logo({ className = "h-10 w-auto" }: { className?: string }) {
+function FacebookIcon({ className = "size-5" }: { className?: string }) {
   return (
-    <img
-      src="/shark.png"
-      alt="Shark Wash PR"
-      className={className}
-      draggable={false}
-    />
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07c0 6.02 4.39 11.02 10.13 11.93v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.33l-.53 3.49h-2.8v8.44C19.61 23.09 24 18.09 24 12.07" />
+    </svg>
+  );
+}
+
+function ChevronIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  );
+}
+
+function ArrowIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="size-4" aria-hidden="true">
+      <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+    </svg>
+  );
+}
+
+/* ---- Marquee row (duplicated for seamless loop) ---- */
+function MarqueeRow() {
+  return (
+    <span className="marquee-row">
+      {MARQUEE_SERVICES.map((s) => (
+        <span key={s}><b>{s}</b><i></i></span>
+      ))}
+    </span>
   );
 }
 
 export default function Home() {
   return (
     <>
+      <Immersion />
+
+      {/* ---- SCROLL PROGRESS ---- */}
+      <div className="scroll-progress" aria-hidden="true"><i></i></div>
+
       {/* ---- HEADER ---- */}
-      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-abismo/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 sm:py-3">
-          <a href="#" className="flex items-center gap-2">
-            <Logo className="h-9 w-auto sm:h-12" />
-          </a>
-          <nav className="hidden items-center gap-8 md:flex">
-            <a href="#galeria" className="text-sm font-medium text-white/70 transition-colors hover:text-white">
-              Galería
-            </a>
-            <a href="#proceso" className="text-sm font-medium text-white/70 transition-colors hover:text-white">
-              Proceso
-            </a>
-            <a href="#faq" className="text-sm font-medium text-white/70 transition-colors hover:text-white">
-              FAQ
-            </a>
+      <header className="site-header" data-header>
+        {/* Utility bar */}
+        <div className="header-utility">
+          <div className="shell utility-inner">
+            <div className="utility-left"></div>
+            <ul className="utility-facts">
+              <li>Disponibles los 7 días</li>
+              <li>Área metro</li>
+            </ul>
+            <div className="utility-right">
+              <a className="utility-phone" href={WHATSAPP_URL} target="_blank" rel="noopener">
+                <WhatsAppIcon className="utility-icon" />
+                <span>(787) 529-3156</span>
+              </a>
+              <a className="utility-social" href={INSTAGRAM} target="_blank" rel="noopener" aria-label="Instagram">
+                <InstagramIcon className="utility-icon" />
+              </a>
+              <a className="utility-social" href={FACEBOOK} target="_blank" rel="noopener" aria-label="Facebook">
+                <FacebookIcon className="utility-icon" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="shell header-inner">
+          <div className="hidden min-[900px]:block" aria-hidden="true"></div>
+
+          <nav className="hidden gap-8 items-center min-[900px]:flex" aria-label="Principal">
+            <a href="#galeria" className="nav-link" data-spy="galeria"><span>Galería</span></a>
+            <a href="#proceso" className="nav-link" data-spy="proceso"><span>Proceso</span></a>
+            <a href="#faq" className="nav-link" data-spy="faq"><span>FAQ</span></a>
           </nav>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-espuma px-4 py-2 text-xs font-bold text-abismo transition-all hover:bg-white hover:shadow-lg sm:px-5 sm:py-2.5 sm:text-sm"
-          >
-            <WhatsAppIcon className="size-3.5 sm:size-4" />
-            Cotización gratis
-          </a>
+
+          <div className="header-actions">
+            <button className="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-panel">
+              <span className="sr-only">Menú</span>
+              <span className="menu-bar" aria-hidden="true"></span>
+              <span className="menu-bar" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile menu panel */}
+        <div className="menu-panel" id="menu-panel" data-menu hidden>
+          <nav className="menu-nav" aria-label="Menú">
+            <a href="#galeria" data-spy="galeria"><span className="menu-idx">01</span>Galería</a>
+            <a href="#proceso" data-spy="proceso"><span className="menu-idx">02</span>Proceso</a>
+            <a href="#faq" data-spy="faq"><span className="menu-idx">03</span>FAQ</a>
+          </nav>
+          <div className="menu-foot">
+            <a className="btn btn-wa btn-block magnetic" href={WHATSAPP_URL} target="_blank" rel="noopener">
+              <WhatsAppIcon />
+              <span>Cotización gratis</span>
+            </a>
+            <p className="menu-meta">Disponibles los 7 días · Área metro</p>
+          </div>
         </div>
       </header>
 
-      <main>
+      <main id="top">
         {/* ---- HERO ---- */}
-        <section className="relative flex flex-col overflow-hidden bg-abismo lg:min-h-dvh lg:flex-row lg:items-center">
-          {/* Background: dark blue with shark watermark */}
-          <div className="absolute inset-0 bg-abismo">
-            <img
-              src="/shark.png"
-              alt=""
-              className="hidden sm:block absolute left-1/2 top-[70%] h-[130%] w-auto -translate-x-1/2 -translate-y-1/2 object-contain opacity-10"
-              aria-hidden="true"
-            />
-          </div>
+        <section className="hero" data-hero data-theme="dark">
+          <div className="hero-bg" aria-hidden="true"></div>
+          <img
+            className="hero-shark"
+            src="/logo.webp"
+            alt=""
+            aria-hidden="true"
+            data-parallax="0.18"
+            data-parallax-rotate="3"
+          />
+          <canvas className="grime" data-grime aria-hidden="true"></canvas>
 
-          {/* Mobile: shark visible area */}
-          <div className="relative z-10 flex h-[65dvh] items-end justify-center pt-56 lg:hidden">
-            <img
-              src="/logo.png"
-              alt="Shark Wash PR"
-              className="h-96 w-auto object-contain opacity-30"
-              draggable={false}
-            />
-          </div>
+          <div className="shell hero-inner">
+            <div className="hero-copy" aria-hidden="true"></div>
 
-          <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-24 sm:px-6 lg:py-32 lg:pt-40">
-            <div className="flex flex-col gap-10 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
-              <div className="hidden lg:flex flex-col gap-6 text-left">
-                <h1
-                  className="font-display text-7xl font-[800] leading-[1.05] tracking-tight text-white"
-                  style={{ fontStretch: "expanded" }}
-                >
-                  Dirty surfaces
-                  <br />
-                  become
-                  <br />
-                  <span className="text-espuma">our prey.</span>
-                </h1>
+            {/* Quote form */}
+            <form className="quote-card" data-quote-form data-reveal="zoom" data-reveal-delay="200">
+              <h2 className="quote-title font-display">Solicita una cotización gratis</h2>
+              <div className="field-grid">
+                <div className="field">
+                  <label htmlFor="q-nombre">Nombre *</label>
+                  <input id="q-nombre" name="nombre" type="text" required autoComplete="name" placeholder="Tu nombre" />
+                </div>
+                <div className="field">
+                  <label htmlFor="q-tel">Teléfono *</label>
+                  <input id="q-tel" name="telefono" type="tel" required autoComplete="tel" placeholder="787-000-0000" />
+                </div>
               </div>
-
-              {/* Quote form */}
-              <QuoteForm />
-            </div>
+              <div className="field">
+                <label htmlFor="q-email">Email (opcional)</label>
+                <input id="q-email" name="email" type="email" autoComplete="email" placeholder="tu@email.com" />
+              </div>
+              <div className="field">
+                <label htmlFor="q-servicio">Selecciona un servicio</label>
+                <div className="select-wrap">
+                  <select id="q-servicio" name="servicio" defaultValue="">
+                    <option value="">Servicio</option>
+                    <option>Driveway</option>
+                    <option>Acera</option>
+                    <option>Propiedad comercial</option>
+                    <option>Cancha deportiva</option>
+                    <option>Placas solares</option>
+                    <option>Zafacón</option>
+                    <option>Vehículo</option>
+                    <option>Fachada</option>
+                    <option>Techo</option>
+                    <option>Área de piscina</option>
+                    <option>Muro / Verja</option>
+                    <option>Otro - También bregamos con eso</option>
+                  </select>
+                  <ChevronIcon />
+                </div>
+              </div>
+              <div className="field">
+                <label htmlFor="q-detalles">Detalles adicionales</label>
+                <textarea id="q-detalles" name="detalles" rows={3} placeholder="Describe el área, tamaño aproximado, etc."></textarea>
+              </div>
+              <button type="submit" className="btn btn-wa btn-block magnetic">
+                <span>Enviar cotización</span>
+                <WhatsAppIcon />
+              </button>
+            </form>
           </div>
 
-          {/* Bottom fade */}
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-hueso to-transparent sm:h-32" />
+          <a className="scroll-cue" href="#galeria" aria-label="Bajar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="size-8" aria-hidden="true">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </a>
         </section>
 
-        {/* ---- GALLERY (Before & After) ---- */}
-        <section id="galeria" className="bg-hueso py-16 sm:py-24 lg:py-32">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <FadeIn>
-              <div className="mx-auto max-w-2xl text-center">
-                <h2
-                  className="mt-4 font-display text-3xl font-[800] tracking-tight sm:text-4xl lg:text-5xl"
-                  style={{ fontStretch: "expanded" }}
-                >
-                  Nuestro trabajo
-                </h2>
-                <p className="mt-4 text-lg text-abismo/50">
-                  Desliza para ver los resultados.
-                </p>
-              </div>
-            </FadeIn>
+        {/* ---- GALLERY ---- */}
+        <section id="galeria" className="bg-hueso py-16 sm:py-24 lg:py-32 relative overflow-hidden">
+          <div className="shell">
+            <div className="section-head">
+              <p className="eyebrow eyebrow-tide" data-reveal="up">Galería</p>
+              <h2 className="section-title font-display" data-split-words>Nuestro trabajo</h2>
+              <p className="section-sub" data-reveal="up" data-reveal-delay="160">
+                Antes y después. Desliza para ver el resultado completo.
+              </p>
+            </div>
 
             <div className="mt-10 grid gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
               {GALLERY_ITEMS.map((item) => (
-                <FadeIn key={item.id}>
+                <div key={item.id} data-reveal="up">
                   <Comparator
                     before={item.before}
                     after={item.after}
                     alt={item.alt}
                     className="rounded-2xl shadow-lg ring-1 ring-concreto/20"
                   />
-                </FadeIn>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* ---- PROCESS ---- */}
-        <section id="proceso" className="bg-abismo py-16 text-white sm:py-24 lg:py-32">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <FadeIn>
-              <div className="mx-auto max-w-2xl text-center">
-                <span className="label-mono text-espuma">Proceso</span>
-                <h2
-                  className="mt-4 font-display text-4xl font-[800] tracking-tight sm:text-5xl"
-                  style={{ fontStretch: "expanded" }}
-                >
-                  Así de fácil
-                </h2>
-              </div>
-            </FadeIn>
-
-            <div className="mt-16 grid gap-12 sm:grid-cols-4 sm:gap-8">
-              {PROCESS_STEPS.map((step) => (
-                <FadeIn key={step.step}>
-                  <div className="step-connector flex flex-col items-center text-center sm:items-start sm:text-left">
-                    <div className="flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br from-marea to-espuma">
-                      <span className="font-display text-2xl font-[800] text-white">
-                        {step.step}
-                      </span>
-                    </div>
-                    <h3 className="mt-6 font-display text-2xl font-[700] tracking-tight">
-                      {step.title}
-                    </h3>
-                  </div>
-                </FadeIn>
-              ))}
+        <section id="proceso" className="relative py-16 sm:py-24 lg:py-32 overflow-hidden" data-theme="dark">
+          <canvas className="bubbles" data-bubbles aria-hidden="true"></canvas>
+          <div className="shell relative z-2">
+            <div className="section-head">
+              <p className="eyebrow eyebrow-foam" data-reveal="up">Proceso</p>
+              <h2 className="section-title font-display text-white" data-split-words>Así de fácil</h2>
             </div>
 
-            <FadeIn className="mt-16 text-center">
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 rounded-full bg-espuma px-8 py-4 text-lg font-bold text-abismo transition-all hover:bg-white hover:shadow-xl"
-              >
-                <WhatsAppIcon className="size-5" />
-                Comenzar ahora
+            <ol className="steps">
+              {PROCESS_STEPS.map((s, i) => (
+                <li
+                  key={s.step}
+                  className={`step${i === PROCESS_STEPS.length - 1 ? " step-last" : ""}`}
+                  data-reveal="up"
+                  data-reveal-delay={String(i * 90)}
+                >
+                  <div className="step-rail" aria-hidden="true">
+                    <span className="step-num"><b>{s.step}</b></span>
+                    <span className="step-line"></span>
+                  </div>
+                  <div className="step-body">
+                    <h3 className="font-display">{s.title}</h3>
+                    <p>{s.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+
+            <ul className="process-facts" data-reveal="up" data-reveal-delay="120">
+              <li>Disponibles los 7 días</li>
+              <li>Área metro</li>
+            </ul>
+
+            <div className="text-center mt-12" data-reveal="up" data-reveal-delay="200">
+              <a className="btn btn-wa btn-lg magnetic" href={WHATSAPP_URL} target="_blank" rel="noopener">
+                <WhatsAppIcon />
+                <span>Comenzar ahora</span>
               </a>
-            </FadeIn>
+            </div>
           </div>
         </section>
 
         {/* ---- FAQ ---- */}
-        <section id="faq" className="bg-white py-16 sm:py-24 lg:py-32">
-          <div className="mx-auto max-w-3xl px-4 sm:px-6">
-            <FadeIn>
-              <div className="text-center">
-                <span className="label-mono text-marea">Preguntas frecuentes</span>
-                <h2
-                  className="mt-4 font-display text-4xl font-[800] tracking-tight sm:text-5xl"
-                  style={{ fontStretch: "expanded" }}
-                >
-                  FAQ
-                </h2>
-              </div>
-            </FadeIn>
+        <section id="faq" className="bg-white py-16 sm:py-24 lg:py-32 relative overflow-hidden">
+          <div className="shell shell-narrow">
+            <div className="section-head">
+              <p className="eyebrow eyebrow-tide" data-reveal="up">Preguntas frecuentes</p>
+              <h2 className="section-title font-display" data-split-words>FAQ</h2>
+            </div>
 
-            <FadeIn className="mt-12">
-              <div className="divide-y divide-concreto/20 rounded-2xl border border-concreto/20 bg-hueso">
-                {FAQ.map((item, i) => (
-                  <details key={i} className="group px-7 py-5">
-                    <summary className="flex cursor-pointer list-none items-center justify-between font-display text-lg font-[600] leading-snug [&::-webkit-details-marker]:hidden">
-                      {item.question}
-                      <span className="ml-4 flex size-8 shrink-0 items-center justify-center rounded-full bg-marea/10 text-marea transition-transform group-open:rotate-45">
-                        +
-                      </span>
-                    </summary>
-                    <p className="mt-4 pb-2 text-base leading-relaxed text-abismo/60">
-                      {item.answer}
-                    </p>
-                  </details>
-                ))}
-              </div>
-            </FadeIn>
+            <div className="accordion" data-accordion>
+              {FAQ.map((item, i) => (
+                <div key={i} className="acc-item" data-reveal="up" data-reveal-delay={String(i * 60)}>
+                  <button className="acc-trigger" type="button" aria-expanded="false">
+                    <span>{item.question}</span>
+                    <span className="acc-icon" aria-hidden="true"></span>
+                  </button>
+                  <div className="acc-panel">
+                    <div className="acc-inner"><p>{item.answer}</p></div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* ---- CLOSING CTA ---- */}
-        <section className="relative overflow-hidden bg-abismo py-16 sm:py-24 lg:py-32">
-          {/* Background glow */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <div className="h-[500px] w-[500px] rounded-full bg-marea/20 blur-[120px]" />
-          </div>
+        {/* ---- CTA ---- */}
+        <section className="relative py-16 sm:py-24 lg:py-32 overflow-hidden" data-theme="dark">
+          <canvas className="bubbles" data-bubbles aria-hidden="true"></canvas>
+          <div className="shell relative z-2">
+            <div className="text-center max-w-[38rem] mx-auto">
+              <img className="h-20 w-auto mx-auto mb-8" src="/logo.webp" alt="" aria-hidden="true" data-reveal="zoom" />
+              <h2 className="section-title font-display text-white !mt-0" data-split-words>¿List@ para limpiar?</h2>
+            </div>
 
-          <div className="relative z-10 mx-auto max-w-3xl px-4 text-center sm:px-6">
-            <FadeIn>
-              <Logo className="mx-auto h-20 w-auto mb-8" />
-              <h2
-                className="font-display text-4xl font-[800] tracking-tight text-white sm:text-5xl"
-                style={{ fontStretch: "expanded" }}
-              >
-                ¿Listo para limpiar?
-              </h2>
-              <p className="mt-4 text-lg text-espuma/80">
-                Mándanos fotos por WhatsApp y te damos precio fijo en minutos.
-                Sin sorpresas, sin cargos adicionales.
-              </p>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-10 inline-flex items-center gap-3 rounded-full bg-espuma px-10 py-5 text-lg font-bold text-abismo transition-all hover:bg-white hover:shadow-xl"
-              >
-                <WhatsAppIcon className="size-6" />
-                Escribir por WhatsApp
+            <div className="mt-12 flex flex-col items-stretch gap-3.5 sm:flex-row sm:justify-center sm:items-center sm:gap-4" data-reveal="up" data-reveal-delay="220">
+              <a className="btn btn-wa btn-xl magnetic" href={WHATSAPP_URL} target="_blank" rel="noopener">
+                <WhatsAppIcon />
+                <span>Escribir por WhatsApp</span>
               </a>
-            </FadeIn>
+              <a className="btn btn-ghost btn-xl magnetic" href={INSTAGRAM} target="_blank" rel="noopener">
+                <InstagramIcon />
+                <span>Instagram</span>
+              </a>
+              <a className="btn btn-ghost btn-xl magnetic" href={FACEBOOK} target="_blank" rel="noopener">
+                <FacebookIcon />
+                <span>Facebook</span>
+              </a>
+            </div>
+            <p className="mt-7 text-center font-mono text-[0.66rem] tracking-[0.14em] uppercase text-white/40" data-reveal="up" data-reveal-delay="640">
+              Disponibles los 7 días · Área metro
+            </p>
           </div>
         </section>
       </main>
 
       {/* ---- FOOTER ---- */}
-      <footer className="bg-abismo border-t border-white/10 py-8 text-white/40 sm:py-12">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-4 sm:flex-row sm:justify-between sm:gap-8 sm:px-6">
-          <div className="flex items-center gap-3">
-            <Logo className="h-10 w-auto" />
+      <footer className="site-footer">
+        <div className="shell">
+          <div className="footer-grid">
+            <div className="footer-col footer-brand-col">
+              <img className="footer-logo" src="/logo.webp" alt="Shark Wash PR" width="440" height="440" />
+              <p className="footer-blurb">Servicio profesional de lavado a presión en el área metro.</p>
+              <div className="footer-social">
+                <a href={INSTAGRAM} target="_blank" rel="noopener" aria-label="Instagram" className="social">
+                  <InstagramIcon />
+                </a>
+                <a href={FACEBOOK} target="_blank" rel="noopener" aria-label="Facebook" className="social">
+                  <FacebookIcon />
+                </a>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener" aria-label="WhatsApp" className="social">
+                  <WhatsAppIcon />
+                </a>
+              </div>
+            </div>
+
+            <div className="footer-col">
+              <h2 className="footer-head">Sobre nosotros</h2>
+              <p className="footer-about">
+                Somos los #1 en limpieza de exteriores en Puerto Rico. Ofrecemos servicio en toda el área metro y áreas limítrofes. En propiedades residenciales limpiamos driveways, aceras, zafacones, placas solares, techos, patios, paredes y ventanas. También ofrecemos lavado a presión y limpieza de exteriores para propiedades comerciales. Escríbenos y te damos un estimado.
+              </p>
+            </div>
+
+            <div className="footer-col">
+              <h2 className="footer-head">Sitio</h2>
+              <ul className="footer-list footer-links">
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href={WHATSAPP_URL} target="_blank" rel="noopener">Cotización gratis</a></li>
+              </ul>
+
+              <h2 className="footer-head footer-head-gap">Horario</h2>
+              <ul className="footer-list">
+                <li>Disponibles los 7 días de la semana</li>
+              </ul>
+            </div>
+
+            <div className="footer-col">
+              <h2 className="footer-head">Contacto</h2>
+              <ul className="footer-list footer-contact">
+                <li>
+                  <span className="footer-label">WhatsApp</span>
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener">(787) 529-3156</a>
+                </li>
+                <li>
+                  <span className="footer-label">Instagram</span>
+                  <a href={INSTAGRAM} target="_blank" rel="noopener">@sharkwashpr</a>
+                </li>
+                <li>
+                  <span className="footer-label">Facebook</span>
+                  <a href={FACEBOOK} target="_blank" rel="noopener">Shark Wash PR</a>
+                </li>
+              </ul>
+
+              <h2 className="footer-head footer-head-gap">Cobertura</h2>
+              <p className="footer-coverage">Área metro.</p>
+            </div>
           </div>
-          <p className="text-sm italic">{TAGLINE}</p>
-          <div className="flex items-center gap-5">
-            <a
-              href={INSTAGRAM}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/40 transition-colors hover:text-espuma"
-              aria-label="Instagram @sharkwashpr"
-            >
-              <InstagramIcon className="size-5" />
-            </a>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/40 transition-colors hover:text-espuma"
-              aria-label="WhatsApp"
-            >
-              <WhatsAppIcon className="size-5" />
-            </a>
+
+          <div className="footer-bottom">
+            <p>&copy; {new Date().getFullYear()} Shark Wash PR</p>
+            <p>Puerto Rico</p>
           </div>
         </div>
       </footer>
 
-      {/* ---- FLOATING WHATSAPP BUTTON (mobile only) ---- */}
-      <a
-        href={WHATSAPP_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 flex size-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/30 transition-transform hover:scale-110 sm:hidden"
-        aria-label="Contactar por WhatsApp"
-      >
+      {/* ---- FLOATING WHATSAPP ---- */}
+      <a className="wa-fab" data-fab href={WHATSAPP_URL} target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+        <span className="fab-ping" aria-hidden="true"></span>
         <WhatsAppIcon className="size-7" />
       </a>
     </>

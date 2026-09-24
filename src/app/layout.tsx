@@ -17,7 +17,7 @@ const instrumentSans = Instrument_Sans({
 
 const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "500"],
   variable: "--font-mono",
   display: "swap",
 });
@@ -26,6 +26,17 @@ export const metadata: Metadata = {
   title: "Shark Wash PR | Pressure Washing en Puerto Rico",
   description:
     "Servicio profesional de pressure washing en el área metro de San Juan. Marquesinas, adoquines, aceras, fachadas y más. Cotización por WhatsApp.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  other: {
+    "theme-color": "#06263d",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
