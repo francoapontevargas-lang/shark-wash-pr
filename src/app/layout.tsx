@@ -23,9 +23,9 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shark Wash PR | Pressure Washing en Puerto Rico",
+  title: "Shark Wash PR | Lavado de Exteriores en Puerto Rico",
   description:
-    "Servicio profesional de pressure washing en el área metro de San Juan. Marquesinas, adoquines, aceras, fachadas y más. Cotización por WhatsApp.",
+    "En Shark Wash PR somos expertos en limpieza de exteriores para residencias y comercios en Puerto Rico. Usamos equipo profesional de lavado a presión para limpiar todo tipo de superficie. Escríbenos y recibe tu cotización gratis.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
