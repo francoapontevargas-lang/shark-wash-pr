@@ -138,12 +138,18 @@ export default function Home() {
         <section className="hero" data-hero data-theme="dark">
           <div className="hero-bg" aria-hidden="true"></div>
           <img
-            className="hero-shark"
+            className="hero-shark hero-shark-logo"
             src="/logo.webp"
             alt=""
             aria-hidden="true"
             data-parallax="0.18"
             data-parallax-rotate="3"
+          />
+          <img
+            className="hero-shark hero-shark-only"
+            src="/shark.webp"
+            alt=""
+            aria-hidden="true"
           />
           <canvas className="grime" data-grime aria-hidden="true"></canvas>
 
