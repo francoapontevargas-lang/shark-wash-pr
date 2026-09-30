@@ -680,19 +680,19 @@ html {
     z-index: 4;
   }
   .quote-card {
-    background: rgba(255, 255, 255, 0.45) !important;
-    backdrop-filter: blur(18px);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
   }
   .quote-card .field input,
   .quote-card .field select,
   .quote-card .field textarea {
-    background: rgba(244, 247, 249, 0.5) !important;
+    background: rgba(244, 247, 249, 0.3) !important;
   }
   .quote-card .field input:focus,
   .quote-card .field select:focus,
   .quote-card .field textarea:focus {
-    background: rgba(255, 255, 255, 0.65) !important;
+    background: rgba(255, 255, 255, 0.45) !important;
   }
 }
 
