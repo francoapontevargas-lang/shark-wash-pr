@@ -78,10 +78,7 @@ export default function Home() {
         <div className="header-utility">
           <div className="shell utility-inner">
             <div className="utility-left"></div>
-            <ul className="utility-facts">
-              <li>Disponibles los 7 días</li>
-              <li>Área metro</li>
-            </ul>
+            <div className="utility-facts"></div>
             <div className="utility-right">
               <a className="utility-phone" href={WHATSAPP_URL} target="_blank" rel="noopener">
                 <WhatsAppIcon className="utility-icon" />
