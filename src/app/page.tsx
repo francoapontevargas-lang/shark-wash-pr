@@ -272,7 +272,7 @@ export default function Home() {
           <canvas className="bubbles" data-bubbles aria-hidden="true"></canvas>
           <div className="shell relative z-2">
             <div className="text-center max-w-[38rem] mx-auto">
-              <img className="h-40 sm:h-52 w-auto mx-auto mb-8" src="/logo.webp" alt="" aria-hidden="true" data-reveal="zoom" />
+              <img className="h-60 sm:h-72 w-auto mx-auto mb-8" src="/logo.webp" alt="" aria-hidden="true" data-reveal="zoom" />
               <h2 className="section-title font-display text-white !mt-0" data-split-words>¿List@ para limpiar?</h2>
             </div>
 
