@@ -268,7 +268,7 @@ export default function Home() {
         </section>
 
         {/* ---- CONTACTO ---- */}
-        <section id="contacto" className="relative py-16 sm:py-24 lg:py-32 overflow-hidden" data-theme="dark">
+        <section id="contacto" className="relative py-10 sm:py-16 lg:py-24 overflow-hidden" data-theme="dark">
           <canvas className="bubbles" data-bubbles aria-hidden="true"></canvas>
           <div className="shell relative z-2">
             <div className="text-center max-w-[38rem] mx-auto">
