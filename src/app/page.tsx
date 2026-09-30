@@ -163,9 +163,15 @@ export default function Home() {
                   <input id="q-tel" name="telefono" type="tel" required autoComplete="tel" placeholder="787-000-0000" />
                 </div>
               </div>
-              <div className="field">
-                <label htmlFor="q-email">Email (opcional)</label>
-                <input id="q-email" name="email" type="email" autoComplete="email" placeholder="tu@email.com" />
+              <div className="field-grid">
+                <div className="field">
+                  <label htmlFor="q-email">Email (opcional)</label>
+                  <input id="q-email" name="email" type="email" autoComplete="email" placeholder="tu@email.com" />
+                </div>
+                <div className="field">
+                  <label htmlFor="q-compania">Compañía (si aplica)</label>
+                  <input id="q-compania" name="compania" type="text" autoComplete="organization" placeholder="Nombre de la compañía" />
+                </div>
               </div>
               <div className="field">
                 <label htmlFor="q-servicio">Selecciona un servicio</label>

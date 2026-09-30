@@ -666,9 +666,29 @@ html {
 }
 @media (max-width: 1023px) {
   .hero-shark {
-    height: 80%;
-    top: 33%;
-    opacity: 0.2;
+    height: 55%;
+    top: 50%;
+    left: 50%;
+    opacity: 0.22;
+    z-index: 2;
+  }
+  .hero .grime {
+    display: none;
+  }
+  .quote-card {
+    background: rgba(255, 255, 255, 0.55) !important;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+  }
+  .quote-card .field input,
+  .quote-card .field select,
+  .quote-card .field textarea {
+    background: rgba(244, 247, 249, 0.6) !important;
+  }
+  .quote-card .field input:focus,
+  .quote-card .field select:focus,
+  .quote-card .field textarea:focus {
+    background: rgba(255, 255, 255, 0.7) !important;
   }
 }
 
