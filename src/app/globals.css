@@ -694,6 +694,14 @@ html {
   .quote-card .field textarea:focus {
     background: rgba(255, 255, 255, 0.6) !important;
   }
+  .quote-card .field label {
+    color: var(--color-abismo) !important;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  }
+  .quote-card .quote-title {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  }
 }
 
 .hero-inner {
