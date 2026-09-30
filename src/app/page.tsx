@@ -103,6 +103,7 @@ export default function Home() {
           <nav className="hidden gap-8 items-center min-[900px]:flex" aria-label="Principal">
             <a href="#galeria" className="nav-link" data-spy="galeria"><span>Galería</span></a>
             <a href="#proceso" className="nav-link" data-spy="proceso"><span>Proceso</span></a>
+            <a href="#contacto" className="nav-link" data-spy="contacto"><span>Contacto</span></a>
           </nav>
 
           <div className="header-actions">
@@ -119,6 +120,7 @@ export default function Home() {
           <nav className="menu-nav" aria-label="Menú">
             <a href="#galeria" data-spy="galeria"><span className="menu-idx">01</span>Galería</a>
             <a href="#proceso" data-spy="proceso"><span className="menu-idx">02</span>Proceso</a>
+            <a href="#contacto" data-spy="contacto"><span className="menu-idx">03</span>Contacto</a>
           </nav>
           <div className="menu-foot">
             <a className="btn btn-wa btn-block magnetic" href={WHATSAPP_URL} target="_blank" rel="noopener">
@@ -276,8 +278,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ---- CTA ---- */}
-        <section className="relative py-16 sm:py-24 lg:py-32 overflow-hidden" data-theme="dark">
+        {/* ---- CONTACTO ---- */}
+        <section id="contacto" className="relative py-16 sm:py-24 lg:py-32 overflow-hidden" data-theme="dark">
           <canvas className="bubbles" data-bubbles aria-hidden="true"></canvas>
           <div className="shell relative z-2">
             <div className="text-center max-w-[38rem] mx-auto">
