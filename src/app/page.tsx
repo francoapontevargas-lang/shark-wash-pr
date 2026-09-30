@@ -172,18 +172,10 @@ export default function Home() {
                 <div className="select-wrap">
                   <select id="q-servicio" name="servicio" defaultValue="">
                     <option value="">Servicio</option>
-                    <option>Driveway</option>
-                    <option>Acera</option>
-                    <option>Propiedad comercial</option>
-                    <option>Cancha deportiva</option>
-                    <option>Placas solares</option>
-                    <option>Zafacón</option>
-                    <option>Vehículo</option>
-                    <option>Fachada</option>
-                    <option>Techo</option>
-                    <option>Área de piscina</option>
-                    <option>Muro / Verja</option>
-                    <option>Otro - También bregamos con eso</option>
+                    <option>Lavado a presión</option>
+                    <option>Lavado de ventanas</option>
+                    <option>Lavado de placas solares</option>
+                    <option>Otro</option>
                   </select>
                   <ChevronIcon />
                 </div>
