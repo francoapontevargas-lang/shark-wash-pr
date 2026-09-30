@@ -8,7 +8,6 @@ import {
   MARQUEE_SERVICES,
   FOOTER_SERVICES,
   PROCESS_STEPS,
-  FAQ,
   GALLERY_ITEMS,
 } from "@/lib/site";
 
@@ -104,7 +103,6 @@ export default function Home() {
           <nav className="hidden gap-8 items-center min-[900px]:flex" aria-label="Principal">
             <a href="#galeria" className="nav-link" data-spy="galeria"><span>Galería</span></a>
             <a href="#proceso" className="nav-link" data-spy="proceso"><span>Proceso</span></a>
-            <a href="#faq" className="nav-link" data-spy="faq"><span>FAQ</span></a>
           </nav>
 
           <div className="header-actions">
@@ -121,7 +119,6 @@ export default function Home() {
           <nav className="menu-nav" aria-label="Menú">
             <a href="#galeria" data-spy="galeria"><span className="menu-idx">01</span>Galería</a>
             <a href="#proceso" data-spy="proceso"><span className="menu-idx">02</span>Proceso</a>
-            <a href="#faq" data-spy="faq"><span className="menu-idx">03</span>FAQ</a>
           </nav>
           <div className="menu-foot">
             <a className="btn btn-wa btn-block magnetic" href={WHATSAPP_URL} target="_blank" rel="noopener">
@@ -279,30 +276,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ---- FAQ ---- */}
-        <section id="faq" className="bg-white py-16 sm:py-24 lg:py-32 relative overflow-hidden">
-          <div className="shell shell-narrow">
-            <div className="section-head">
-              <p className="eyebrow eyebrow-tide" data-reveal="up">Preguntas frecuentes</p>
-              <h2 className="section-title font-display" data-split-words>FAQ</h2>
-            </div>
-
-            <div className="accordion" data-accordion>
-              {FAQ.map((item, i) => (
-                <div key={i} className="acc-item" data-reveal="up" data-reveal-delay={String(i * 60)}>
-                  <button className="acc-trigger" type="button" aria-expanded="false">
-                    <span>{item.question}</span>
-                    <span className="acc-icon" aria-hidden="true"></span>
-                  </button>
-                  <div className="acc-panel">
-                    <div className="acc-inner"><p>{item.answer}</p></div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* ---- CTA ---- */}
         <section className="relative py-16 sm:py-24 lg:py-32 overflow-hidden" data-theme="dark">
           <canvas className="bubbles" data-bubbles aria-hidden="true"></canvas>
@@ -365,7 +338,6 @@ export default function Home() {
               <ul className="footer-list footer-links">
                 <li><a href="#galeria">Galería</a></li>
                 <li><a href="#proceso">Proceso</a></li>
-                <li><a href="#faq">FAQ</a></li>
                 <li><a href={WHATSAPP_URL} target="_blank" rel="noopener">Cotización gratis</a></li>
               </ul>
 
