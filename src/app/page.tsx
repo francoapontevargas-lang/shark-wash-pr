@@ -264,17 +264,6 @@ export default function Home() {
               ))}
             </ol>
 
-            <ul className="process-facts" data-reveal="up" data-reveal-delay="120">
-              <li>Disponibles los 7 días</li>
-              <li>Área metro</li>
-            </ul>
-
-            <div className="text-center mt-12" data-reveal="up" data-reveal-delay="200">
-              <a className="btn btn-wa btn-lg magnetic" href={WHATSAPP_URL} target="_blank" rel="noopener">
-                <WhatsAppIcon />
-                <span>Comenzar ahora</span>
-              </a>
-            </div>
           </div>
         </section>
 
@@ -283,7 +272,7 @@ export default function Home() {
           <canvas className="bubbles" data-bubbles aria-hidden="true"></canvas>
           <div className="shell relative z-2">
             <div className="text-center max-w-[38rem] mx-auto">
-              <img className="h-20 w-auto mx-auto mb-8" src="/logo.webp" alt="" aria-hidden="true" data-reveal="zoom" />
+              <img className="h-40 sm:h-52 w-auto mx-auto mb-8" src="/logo.webp" alt="" aria-hidden="true" data-reveal="zoom" />
               <h2 className="section-title font-display text-white !mt-0" data-split-words>¿List@ para limpiar?</h2>
             </div>
 
