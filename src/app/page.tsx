@@ -290,9 +290,6 @@ export default function Home() {
                 <span>Facebook</span>
               </a>
             </div>
-            <p className="mt-7 text-center font-mono text-[0.66rem] tracking-[0.14em] uppercase text-white/40" data-reveal="up" data-reveal-delay="640">
-              Disponibles los 7 días · Área metro
-            </p>
           </div>
         </section>
       </main>
