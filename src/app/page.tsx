@@ -85,7 +85,7 @@ export default function Home() {
             <div className="utility-right">
               <a className="utility-phone" href={WHATSAPP_URL} target="_blank" rel="noopener">
                 <WhatsAppIcon className="utility-icon" />
-                <span className="hidden sm:inline">(787) 529-3156</span>
+                <span>(787) 529-3156</span>
               </a>
               <a className="utility-social" href={INSTAGRAM} target="_blank" rel="noopener" aria-label="Instagram">
                 <InstagramIcon className="utility-icon" />
